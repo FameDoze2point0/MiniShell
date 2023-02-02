@@ -1,0 +1,109 @@
+Auteurs : 
+    Sllmon & FameDoze2Point0
+
+CD : 
+    cd ..
+    cd /
+    cd ../../..
+
+EXIT :
+    exit
+    exit 3
+    
+Commandes simples :
+    touch file
+    ls file
+    rm file
+
+Commande arrière plan :
+    echo bonjour &
+    sleep 5 &
+
+Utilisation de plusieurs commandes en même temps:
+    echo salut;echo     bonjour;  echo hello &
+
+Redirections :
+    echo BONJOUR > file
+    cat < file
+    ls AAAAAA 2> file.error
+    cat < file.error
+    echo BONJOUR > file2
+    echo HELLO >> file2
+    cat < file2
+    echo Bonsoir >&2
+    ls AAAAAA 2>&1
+    ls AAAAA 1> test 2>&1 ; 
+    cat test
+
+Utilisation des pipes/tubes :
+    echo abcdefg | grep a | wc
+    echo abcdefg | wc -l
+    ls -al | head -n 2 | tr '[a-z]' '[A-Z]'
+
+Composition de toutes ces redirections :
+    echo bonjour > file;cat < file | wc > file2
+
+Utilisation des variables d'environnement :
+    export var="universite de picardie jules verne"
+    echo $var
+    unset var
+
+Utilisation des ET/&& et OU/||
+    echo test &&echo d ecriture||echo  test;
+    echo test||echo d ecriture||echo  test2;
+    echo test||echo d ecriture&&echo  test2;
+
+inversion de valeur de retour "!"
+    ! echo test||echo d ecriture&&echo  test;
+    ! echo test||!echo d ecriture||echo  test2||echo test3 && echo test4;
+
+
+[Information] : Pour les commandes << et <<<, il est impératif de les rentrer manuellement pour un meilleur rendu visuel
+
+commande "tag" <<
+
+    cat << a
+    >Salut
+    >les
+    >amis
+    >a
+
+    cat << a > fichier
+    >Salut
+    >les
+    >amis
+    >a
+
+    cat << a > fichier; cat < fichier
+    >Salut
+    >les
+    >amis
+    >a
+
+    cat << EOF | tr '[a-z]' '[A-Z]'
+    >Bonjour
+    >monsieur
+    >Dupont
+    >EOF
+
+
+commande "<<<"
+    
+    cat <<< "Ceci
+    >est
+    >un
+    >exemple"
+
+    cat <<< bonjour | tr o a
+
+    cat <<< "k | sort -u | wc
+    >b
+    >c
+    >a
+    >a"c
+
+historique
+    historique
+
+[Information] : complétion automatique
+    Vous pouvez consulter la documentation pour savoir comment utiliser la complétion automatique ainsi que tout autre commande

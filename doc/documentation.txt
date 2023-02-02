@@ -1,0 +1,89 @@
+Auteurs : 
+    Sllmon & FameDoze2Point0
+
+Listes des fonctionnalités que nous avons implémentés :
+    Built-in :
+        - cd : permet de se déplacer dans les répertoires
+                cd [chemin]
+                [chemin] : obligatoire
+
+        - export : permet d'initialiser une variable d'environnement ou de changer la valeur de [nom]
+                export [nom]=[value]
+                [nom]   :   obligatoire
+                [value] :   obligatoire
+
+        - unset : permet de supprimer une variable d'environnement
+                unset [nom]
+                [nom]   :   obligatoire
+
+        - exit : permet de quitter le terminal shell
+                exit [numero]
+                [numero] : option
+
+        - historique : permet d'afficher l'historique des dernières commandes utilisées (dans une certaines limites) et de lancer une commande à nouveau ou non
+                historique
+
+        - type : permet de savoir si une commande est builtin ou non
+                type [commande]
+                [commande] : obligatoire
+
+    Redirection : 
+        - > 
+        - >> 
+        - 2> 
+        - 2>>
+        - >&2
+        - 2>&1
+        - <
+        - |
+        - << (BONUS)
+        - <<< (BONUS)
+        
+       [IMPORTANT] Il n'est pas nécessaire de mettre des espaces autour des redirections, le programme les reconnait tout seul
+
+    - commande en avant plan (sans '&')
+
+    - commande en arrière plan (avec '&')
+
+    - le lancement de plusieurs commandes à la fois via (possibilité d'en combiner plusieurs):
+        - ;
+        - &&
+        - ||
+        
+        [IMPORTANT] Il n'est pas nécessaire de mettre des espaces autour, le programme les reconnait tout seul
+
+    - l'utilisation des variables d'environnement
+            À noter que nous pouvons faire de deux façons différentes :
+                - export var=universite (sans guillemets)
+                - export var="universite de picardie jules vernes" (avec guillemets et donc espaces possibles)
+
+            Dans les deux cas, tout doit être "collé" au caractère '='. De plus pour la seconde méthode, il faut qu'il y ait au moins un caractère autre que ' ' (espace) après " ou '
+
+    - l'ajout d'un historique (BONUS)
+            L'historique ne renvoie que les 10 dernières commandes déjà utilisées (si nous avons fais que 3 commandes, alors il n'y aura que 3 par exemple)
+
+
+            En tapant "historique" dans le terminal, les dernières commandes vont apparaître avec un numéro.
+            Vous n'aurez qu'à entrer le numéro de la commande voulue ou -1 pour quitter l'historique.
+            À noter qu'une sécurité a été effectuée, vous pouvez entrer une valeur interdite cela ne pose pas de problème.
+
+            Suite à ça, vous pourrez compléter la commande que vous avez choisie (uniquement en ajout, pas de suppression possible);
+
+    - l'ajout de l'auto-complétion (BONUS)
+            L'autocomplétion ne fonctionne que sur les fichiers.
+            
+            Imaginons qu'on ait 3 fichiers : test.txt test2.txt tomate.txt
+            Si nous faisons : cat t 
+            puis que nous tapons sur entrée/return, nous allons voir les différentes possibilité de complétion (soit les 3 fichiers)
+            
+            J'ai 2 possibilités :
+                - Je retape entrée/return : je valide donc la commande "cat t"
+                - Je continue ma saisi, si nous entrons donc "cat toma"
+
+            J'aurais à nouveau 2 possibilités : 
+                - Taper entrée/return pour valider ma saisie
+                - Taper tabulation puis entrée/return pour valider l'autocomplétion. (Cela n'est possible que lorsque nous n'avons qu'un choix possible)
+            
+    - l'ajout de couleurs dans le terminal (BONUS)
+
+    - l'ajout du dossier courant dans le prompt (cwd) (BONUS)
